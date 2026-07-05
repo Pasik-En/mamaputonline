@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MamaPutOnline</title>
+
+    <link rel="stylesheet" href="./css/output.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Hover Animation */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 3px;
+            left: 0;
+            bottom: -8px;
+            background: #fbbf24;
+            transition: 0.4s;
+            border-radius: 20px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Animation */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- ==================================
+     HEADER & NAVIGATION
+=================================== -->
+<header class="sticky top-0 z-50">
+
+    <nav
+        class="bg-gradient-to-r from-red-950 via-red-900 to-blue-950 shadow-2xl backdrop-blur-md">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex justify-between items-center h-20">
+
+                <!-- ====================
+                     LOGO SECTION
+                ===================== -->
+                <div class="flex items-center gap-3">
+
+                    <div
+                        class="w-14 h-14 rounded-full bg-amber-500 flex items-center justify-center shadow-lg">
+
+                        <i class="fas fa-utensils text-red-900 text-2xl"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h1 class="text-white text-2xl font-extrabold">
+                            MamaPutOnline
+                        </h1>
+
+                        <p class="text-amber-300 text-xs">
+                            Taste of Home
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ====================
+                     DESKTOP MENU
+                ===================== -->
+                <ul
+                    class="hidden lg:flex items-center gap-8 text-white font-medium">
+
+                    <li>
+                        <a href="#home"
+                           class="nav-link hover:text-amber-300 transition">
+                            Home
+                        </a>
+                    </li>
+
+                    <!-- Products Dropdown -->
+                    <li class="relative dropdown">
+
+                        <a href="#products"
+                           class="nav-link hover:text-amber-300 transition flex items-center gap-1">
+
+                            Products
+                            <i class="fas fa-chevron-down text-xs"></i>
+
+                        </a>
+
+                        <ul
+                            class="dropdown-menu absolute top-10 left-0 bg-white rounded-xl shadow-xl w-52 py-3">
+
+                            <li>
+                                <a href="#soups"
+                                   class="block px-5 py-2 hover:bg-red-50 text-gray-700">
+                                    Soups
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#rice"
+                                   class="block px-5 py-2 hover:bg-red-50 text-gray-700">
+                                    Rice Dishes
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#local"
+                                   class="block px-5 py-2 hover:bg-red-50 text-gray-700">
+                                    Local Delicacies
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+                        <a href="#about"
+                           class="nav-link hover:text-amber-300 transition">
+                            About Us
+                        </a>
+                    </li>
+
+                    <!-- Services Dropdown -->
+                    <li class="relative dropdown">
+
+                        <a href="#services"
+                           class="nav-link hover:text-amber-300 transition flex items-center gap-1">
+
+                            Customer Services
+                            <i class="fas fa-chevron-down text-xs"></i>
+
+                        </a>
+
+                        <ul
+                            class="dropdown-menu absolute top-10 left-0 bg-white rounded-xl shadow-xl w-52 py-3">
+
+                            <li>
+                                <a href="#delivery"
+                                   class="block px-5 py-2 hover:bg-red-50 text-gray-700">
+                                    Delivery
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#catering"
+                                   class="block px-5 py-2 hover:bg-red-50 text-gray-700">
+                                    Catering
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#orders"
+                                   class="block px-5 py-2 hover:bg-red-50 text-gray-700">
+                                    Online Orders
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+                        <a href="#contact"
+                           class="nav-link hover:text-amber-300 transition">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- ====================
+                     SEARCH BAR
+                ===================== -->
+                <div class="hidden lg:flex items-center gap-4">
+
+                    <div class="relative">
+
+                        <input
+                            type="text"
+                            placeholder="Search our Menu"
+                            class="w-64 pl-11 pr-4 py-3 rounded-full border-2 border-transparent focus:border-amber-400 focus:ring-4 focus:ring-amber-300 outline-none transition">
+
+                        <i
+                            class="fas fa-search absolute left-4 top-4 text-gray-500">
+                        </i>
+
+                    </div>
+
+                    <button
+                        class="bg-amber-500 hover:bg-amber-400 text-red-900 font-bold px-5 py-3 rounded-full transition hover:scale-105">
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+                <!-- ====================
+                     MOBILE BUTTON
+                ===================== -->
+                <button
+                    id="menu-btn"
+                    class="lg:hidden text-white text-3xl">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ====================
+             MOBILE MENU
+        ===================== -->
+        <div
+            id="mobile-menu"
+            class="hidden lg:hidden bg-red-950 border-t border-red-800">
+
+            <div class="px-6 py-6 space-y-4">
+
+                <a href="#home"
+                   class="block text-white hover:text-amber-300">
+                    Home
+                </a>
+
+                <a href="#products"
+                   class="block text-white hover:text-amber-300">
+                    Products
+                </a>
+
+                <a href="#about"
+                   class="block text-white hover:text-amber-300">
+                    About Us
+                </a>
+
+                <a href="#services"
+                   class="block text-white hover:text-amber-300">
+                    Customer Services
+                </a>
+
+                <a href="#contact"
+                   class="block text-white hover:text-amber-300">
+                    Contact Us
+                </a>
+
+                <!-- Mobile Search -->
+                <div class="relative mt-4">
+
+                    <input
+                        type="text"
+                        placeholder="Search our Menu"
+                        class="w-full pl-10 pr-4 py-3 rounded-full">
+
+                    <i
+                        class="fas fa-search absolute left-4 top-4 text-gray-500">
+                    </i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- JavaScript -->
+<script>
+
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+</script>
+
+<!-- =====================================
+     HERO SECTION
+===================================== -->
+<section
+    id="home"
+    class="relative min-h-screen bg-gradient-to-r from-red-950 via-red-900 to-blue-950 overflow-hidden">
+
+    <!-- Background Overlay -->
+    <div class="absolute inset-0 bg-black/30"></div>
+
+    <div
+        class="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-32">
+
+        <div
+            class="grid lg:grid-cols-2 gap-12 items-center">
+
+            <!-- ==========================
+                 LEFT CONTENT
+            ========================== -->
+            <div
+                class="text-center lg:text-left">
+
+                <!-- Badge -->
+                <div
+                    class="inline-flex items-center gap-2 bg-amber-500 text-red-950 font-semibold px-5 py-2 rounded-full shadow-lg mb-6">
+
+                    🍲 Authentic Nigerian Cuisine
+
+                </div>
+
+                <!-- Main Heading -->
+                <h1
+                    class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
+
+                    Delicious Nigerian Meals
+
+                    <span class="block text-amber-400">
+                        Delivered Fresh
+                    </span>
+
+                    To Your Doorstep
+
+                </h1>
+
+                <!-- Description -->
+                <p
+                    class="mt-8 text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl">
+
+                    Experience the rich taste of authentic Nigerian dishes.
+                    From flavorful Egusi Soup and fresh Fish Pepper Soup
+                    to delicious Jollof Rice and Nkwobi, MamaPutOnline
+                    brings your favorite meals straight from our kitchen
+                    to your table.
+
+                </p>
+
+                <!-- Features -->
+                <div
+                    class="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+
+                    <span
+                        class="bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-full">
+                        🚚 Fast Delivery
+                    </span>
+
+                    <span
+                        class="bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-full">
+                        🍲 Fresh Daily
+                    </span>
+
+                    <span
+                        class="bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-full">
+                        ⭐ Top Rated
+                    </span>
+
+                </div>
+
+                <!-- CTA Buttons -->
+                <div
+                    class="mt-10 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+
+                    <a
+                        href="#products"
+                        class="bg-amber-500 hover:bg-amber-400 text-red-950 font-bold px-8 py-4 rounded-full shadow-xl transition duration-300 hover:scale-105">
+
+                        Order Now
+
+                    </a>
+
+                    <a
+                        href="#about"
+                        class="border-2 border-white text-white hover:bg-white hover:text-red-900 font-bold px-8 py-4 rounded-full transition duration-300">
+
+                        Learn More
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================
+                 RIGHT IMAGE
+            ========================== -->
+            <div
+                class="relative flex justify-center">
+
+                <!-- Decorative Glow -->
+                <div
+                    class="absolute w-96 h-96 bg-amber-500 rounded-full blur-3xl opacity-20">
+                </div>
+
+                <!-- Food Image -->
+                <img
+                    src="./images/mixed-menu.jpg"
+                    alt="Delicious Assorted Nigerian Meal"
+                    class="relative z-10 w-full max-w-2xl rounded-3xl shadow-2xl object-cover hover:scale-105 transition duration-500">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Decorative Bottom Wave -->
+    <div
+        class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+
+        <svg
+            class="relative block w-full h-20"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none">
+
+            <path
+                d="M321.39,56.44C179.59,89.92,0,87.58,0,87.58V120H1200V16.48s-189.18,42.42-350.54,35.95C694.39,45.73,565.64,0,321.39,56.44Z"
+                fill="#fef3c7">
+            </path>
+
+        </svg>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+      PRODUCTS SECTION
+=========================================== -->
+<section id="products" class="py-24 bg-gradient-to-b from-amber-50 to-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- ==========================================
+             SECTION HEADER
+        =========================================== -->
+        <div class="text-center mb-16">
+
+            <span
+                class="bg-red-900 text-white px-6 py-2 rounded-full font-semibold">
+                OUR MENU
+            </span>
+
+            <h2
+                class="text-5xl font-extrabold text-gray-900 mt-6">
+
+                Delicious Nigerian
+
+                <span class="text-red-900">
+                    Local Dishes
+                </span>
+
+            </h2>
+
+            <p
+                class="mt-5 text-gray-600 max-w-3xl mx-auto">
+
+                Explore our carefully prepared Nigerian soups,
+                rice dishes, and local delicacies made with
+                authentic recipes and fresh ingredients.
+
+            </p>
+
+        </div>
+
+        <!-- ==========================================
+             PRODUCTS GRID
+             Desktop = 6 Columns
+             Tablet = 3 Columns
+             Mobile = 1-2 Columns
+        =========================================== -->
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6">
+
+            <!-- ==================================================
+                 CARD 1 - EGUSI
+            =================================================== -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition duration-500">
+
+                <!-- Discount Badge -->
+                <div
+                    class="absolute bg-red-600 text-white px-3 py-1 rounded-br-xl font-bold z-10">
+                    -15%
+                </div>
+
+                <!-- Food Image -->
+                <img
+                    src="./images/soup-egusi.jpg"
+                    alt="Egusi Soup"
+                    class="h-48 w-full object-cover group-hover:scale-110 transition duration-500">
+
+                <div class="p-4">
+
+                    <h3 class="font-bold text-lg">
+                        Egusi Soup
+                    </h3>
+
+                    <p class="text-red-900 font-bold mt-2">
+                        ₦4,500
+                    </p>
+
+                    <!-- Quantity -->
+                    <input
+                        type="number"
+                        min="1"
+                        value="1"
+                        class="w-full mt-3 border rounded-lg p-2">
+
+                    <!-- Button -->
+                    <button
+                        class="w-full mt-4 bg-red-900 text-white py-2 rounded-xl hover:bg-red-700 transition">
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-500">
+
+                <div class="absolute bg-green-600 text-white px-3 py-1 rounded-br-xl font-bold">
+                    -10%
+                </div>
+
+                <img src="./images/Ewedu.jpg"
+                    alt="Ewedu Soup"
+                    class="h-48 w-full object-cover group-hover:scale-110 transition">
+
+                <div class="p-4">
+
+                    <h3 class="font-bold">Ewedu Soup</h3>
+
+                    <p class="text-red-900 font-bold mt-2">
+                        ₦4,000
+                    </p>
+
+                    <input type="number" value="1" min="1"
+                        class="w-full mt-3 border rounded-lg p-2">
+
+                    <button
+                        class="w-full mt-4 bg-red-900 text-white py-2 rounded-xl">
+                        Order Now
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-500">
+                <img src="./images/Ora soup.jpg"
+                    alt="Ora Soup"
+                    class="h-48 w-full object-cover group-hover:scale-110 transition">
+                <div class="p-4">
+                    <h3 class="font-bold">Ora Soup</h3>
+                    <p class="text-red-900 font-bold mt-2">₦4,500</p>
+                    <input type="number" value="1" min="1"
+                        class="w-full mt-3 border rounded-lg p-2">
+                    <button class="w-full mt-4 bg-red-900 text-white py-2 rounded-xl">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-500">
+                <img src="./images/Edikaikon.jpg"
+                    alt="Edikaikong"
+                    class="h-48 w-full object-cover group-hover:scale-110 transition">
+                <div class="p-4">
+                    <h3 class="font-bold">Edikaikong</h3>
+                    <p class="text-red-900 font-bold mt-2">₦5,000</p>
+                    <input type="number" value="1" min="1"
+                        class="w-full mt-3 border rounded-lg p-2">
+                    <button class="w-full mt-4 bg-red-900 text-white py-2 rounded-xl">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-500">
+                <img src="./images/okazi-soup.webp"
+                    alt="Okazi Soup"
+                    class="h-48 w-full object-cover group-hover:scale-110 transition">
+                <div class="p-4">
+                    <h3 class="font-bold">Okazi Soup</h3>
+                    <p class="text-red-900 font-bold mt-2">₦4,800</p>
+                    <input type="number" value="1" min="1"
+                        class="w-full mt-3 border rounded-lg p-2">
+                    <button class="w-full mt-4 bg-red-900 text-white py-2 rounded-xl">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-500">
+                <img src="./images/Ogbono-soup.jpg"
+                    alt="Ogbono Soup"
+                    class="h-48 w-full object-cover group-hover:scale-110 transition">
+                <div class="p-4">
+                    <h3 class="font-bold">Ogbono Soup</h3>
+                    <p class="text-red-900 font-bold mt-2">₦4,500</p>
+                    <input type="number" value="1" min="1"
+                        class="w-full mt-3 border rounded-lg p-2">
+                    <button class="w-full mt-4 bg-red-900 text-white py-2 rounded-xl">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 7 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-500">
+                <img src="./images/Okro-soup.jpg"
+                    alt="Okro Soup"
+                    class="h-48 w-full object-cover group-hover:scale-110 transition">
+                <div class="p-4">
+                    <h3 class="font-bold">Okro Soup</h3>
+                    <p class="text-red-900 font-bold mt-2">₦4,200</p>
+                    <input type="number" value="1" min="1"
+                        class="w-full mt-3 border rounded-lg p-2">
+                    <button class="w-full mt-4 bg-red-900 text-white py-2 rounded-xl">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 8 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-500">
+                <img src="./images/Jollof-Rice.jpg"
+                    alt="Jollof Rice"
+                    class="h-48 w-full object-cover group-hover:scale-110 transition">
+                <div class="p-4">
+                    <h3 class="font-bold">Jollof Rice</h3>
+                    <p class="text-red-900 font-bold mt-2">₦3,500</p>
+                    <input type="number" value="1" min="1"
+                        class="w-full mt-3 border rounded-lg p-2">
+                    <button class="w-full mt-4 bg-red-900 text-white py-2 rounded-xl">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 9 -->
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-500">
+                <img src="./images/Fried-rice.jpg"
+                    alt="Fried Rice"
+                    class="h-48 w-full object-cover group-hover:scale-110 transition">
+                <div class="p-4">
+                    <h3 class="font-bold">Fried Rice</h3>
+                    <p class="text-red-900 font-bold mt-2">₦3,800</p>
+                    <input type="number" value="1" min="1"
+                        class="w-full mt-3 border rounded-lg p-2">
+                    <button class="w-full mt-4 bg-red-900 text-white py-2 rounded-xl">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 REMAINING PRODUCT CARDS
+            =========================================== -->
+
+            <!-- 10. Porridge Yam -->
+            <!-- 11. Porridge Beans -->
+            <!-- 12. Fried Plantain -->
+            <!-- 13. Abacha -->
+            <!-- 14. Nkwobi -->
+            <!-- 15. Fried Chicken -->
+            <!-- 16. Kpomo -->
+            <!-- 17. Fresh Fish Pepper Soup -->
+            <!-- 18. Chef's Special Combo -->
+
+            <!-- Duplicate Card Structure Above
+                 and replace:
+                 Image
+                 Name
+                 Price
+                 Discount
+            -->
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================
+     ABOUT US SECTION
+===================================== -->
+<section
+    id="about"
+    class="bg-gradient-to-b from-amber-50 to-white py-24">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-4 gap-10">
+
+            <!-- =====================================
+                 LEFT SIDE NAVIGATION PANEL
+            ====================================== -->
+            <aside class="lg:col-span-1">
+
+                <div
+                    class="sticky top-28 bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
+
+                    <h3
+                        class="text-2xl font-bold text-red-900 mb-6">
+
+                        Explore
+
+                    </h3>
+
+                    <ul class="space-y-4">
+
+                        <li>
+                            <a href="#home"
+                               class="flex items-center gap-3 p-3 rounded-xl hover:bg-red-900 hover:text-white transition duration-300">
+                                 Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#products"
+                               class="flex items-center gap-3 p-3 rounded-xl hover:bg-red-900 hover:text-white transition duration-300">
+                                 Products
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#about"
+                               class="flex items-center gap-3 p-3 rounded-xl bg-red-900 text-white">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#services"
+                               class="flex items-center gap-3 p-3 rounded-xl hover:bg-red-900 hover:text-white transition duration-300">
+                                 Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#gallery"
+                               class="flex items-center gap-3 p-3 rounded-xl hover:bg-red-900 hover:text-white transition duration-300">
+                                 Gallery
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#testimonials"
+                               class="flex items-center gap-3 p-3 rounded-xl hover:bg-red-900 hover:text-white transition duration-300">
+                                 Reviews
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#contact"
+                               class="flex items-center gap-3 p-3 rounded-xl hover:bg-red-900 hover:text-white transition duration-300">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </aside>
+
+            <!-- =====================================
+                 RIGHT CONTENT AREA
+            ====================================== -->
+            <div class="lg:col-span-3">
+
+                <!-- Section Heading -->
+                <div class="mb-14">
+
+                    <span
+                        class="inline-block bg-red-900 text-white px-5 py-2 rounded-full font-semibold">
+
+                        ABOUT MAMAPUTONLINE
+
+                    </span>
+
+                    <h2
+                        class="text-5xl lg:text-6xl font-extrabold text-gray-900 mt-6">
+
+                        Bringing The Authentic
+
+                        <span class="text-red-900">
+                            Taste Of Nigeria
+                        </span>
+
+                        To Every Home
+
+                    </h2>
+
+                </div>
+
+                <!-- Images Grid -->
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
+
+                    <!-- Image 1 -->
+                    <div
+                        class="overflow-hidden rounded-3xl shadow-xl">
+
+                        <img
+                            src="./images/soup-eba.jpg"
+                            alt="Nigerian Food"
+                            class="w-full h-80 object-cover hover:scale-110 transition duration-700">
+
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div
+                        class="overflow-hidden rounded-3xl shadow-xl">
+
+                        <img
+                            src="./images/white-rice.jpg"
+                            alt="Restaurant Food"
+                            class="w-full h-80 object-cover hover:scale-110 transition duration-700">
+
+                    </div>
+
+                </div>
+
+                <!-- Story Card -->
+                <div
+                    class="bg-white rounded-3xl shadow-xl p-10 mb-10 hover:shadow-2xl transition">
+
+                    <h3
+                        class="text-3xl font-bold text-red-900 mb-6">
+
+                        Our Story
+
+                    </h3>
+
+                    <p
+                        class="text-lg text-gray-700 leading-relaxed mb-6">
+
+                        MamaPutOnline was founded with a simple dream:
+                        making authentic Nigerian meals available to busy
+                        families, workers, students, and food lovers without
+                        sacrificing quality or taste.
+
+                    </p>
+
+                    <p
+                        class="text-lg text-gray-700 leading-relaxed mb-6">
+
+                        Inspired by the traditional "Mama Put" restaurants
+                        that have served communities for generations,
+                        we combined cultural heritage with modern technology
+                        to create an online food platform that delivers
+                        comfort, convenience, and unforgettable flavors.
+
+                    </p>
+
+                    <p
+                        class="text-lg text-gray-700 leading-relaxed">
+
+                        Every meal is prepared using carefully selected
+                        ingredients, authentic recipes, and the passion
+                        of experienced cooks who understand what true
+                        Nigerian cuisine should taste like.
+
+                    </p>
+
+                </div>
+
+                <!-- Mission Statement -->
+                <div
+                    class="bg-gradient-to-r from-red-950 to-blue-950 text-white rounded-3xl p-10 shadow-xl mb-12">
+
+                    <h3
+                        class="text-3xl font-bold mb-5">
+
+                        Our Mission
+
+                    </h3>
+
+                    <p
+                        class="text-lg leading-relaxed text-gray-200">
+
+                        To preserve the rich culinary heritage of Nigeria
+                        while providing convenient access to freshly prepared,
+                        nutritious, and delicious meals that bring people
+                        together and create memorable dining experiences.
+
+                    </p>
+
+                </div>
+
+                <!-- Statistics -->
+                <div
+                    class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- Stat 1 -->
+                    <div
+                        class="bg-white rounded-3xl shadow-lg p-8 text-center hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+
+                        <h3
+                            class="text-5xl font-extrabold text-red-900">
+
+                            10K+
+
+                        </h3>
+
+                        <p
+                            class="mt-3 text-gray-600">
+
+                            Meals Delivered
+
+                        </p>
+
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div
+                        class="bg-white rounded-3xl shadow-lg p-8 text-center hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+
+                        <h3
+                            class="text-5xl font-extrabold text-red-900">
+
+                            5K+
+
+                        </h3>
+
+                        <p
+                            class="mt-3 text-gray-600">
+
+                            Happy Customers
+
+                        </p>
+
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div
+                        class="bg-white rounded-3xl shadow-lg p-8 text-center hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+
+                        <h3
+                            class="text-5xl font-extrabold text-red-900">
+
+                            18+
+
+                        </h3>
+
+                        <p
+                            class="mt-3 text-gray-600">
+
+                            Local Dishes
+
+                        </p>
+
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div
+                        class="bg-white rounded-3xl shadow-lg p-8 text-center hover:-translate-y-3 hover:shadow-2xl transition duration-300">
+
+                        <h3
+                            class="text-5xl font-extrabold text-red-900">
+
+                            4.9
+
+                        </h3>
+
+                        <p
+                            class="mt-3 text-gray-600">
+
+                            Customer Rating
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Inspirational Quote -->
+                <div
+                    class="mt-14 bg-amber-100 border-l-8 border-amber-500 rounded-3xl p-8">
+
+                    <p
+                        class="text-2xl italic font-semibold text-gray-800 leading-relaxed">
+
+                        "At MamaPutOnline, every meal tells a story,
+                        every recipe preserves a tradition, and every
+                        delivery brings the warmth of home to your table."
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Customer Services Section -->
+<section class="bg-gradient-to-br from-slate-950 via-blue-950 to-red-950 py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Customer Services Header -->
+        <div class="text-center mb-16">
+            <span class="inline-block bg-red-600/20 text-red-400 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                MamaPutOnline Services
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                Customer Services
+            </h2>
+
+            <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                We are committed to providing exceptional service and delicious meals delivered with care.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Service Card -->
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+                <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-red-600/20 text-red-400 mb-6 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 17h6m-3-3v3m8-8a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-3">
+                    Fast Home Delivery
+                </h3>
+
+                <p class="text-gray-400 mb-6">
+                    Freshly prepared meals delivered quickly to your doorstep across Nigeria.
+                </p>
+
+                <button class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg transition">
+                    Learn More
+                </button>
+            </div>
+
+            <!-- Service Card -->
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+                <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-blue-600/20 text-blue-400 mb-6 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 7h18M5 7l1 12h12l1-12M9 11h6" />
+                    </svg>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-3">
+                    Online Food Ordering
+                </h3>
+
+                <p class="text-gray-400 mb-6">
+                    Conveniently browse menus and order your favorite local dishes online.
+                </p>
+
+                <button class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg transition">
+                    Learn More
+                </button>
+            </div>
+
+            <!-- Service Card -->
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+                <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-yellow-500/20 text-yellow-400 mb-6 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 10h8M8 14h5m-8 7h14a2 2 0 002-2V7l-4-4H5a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-3">
+                    Event Catering Services
+                </h3>
+
+                <p class="text-gray-400 mb-6">
+                    Delicious catering solutions for weddings, birthdays, parties, and events.
+                </p>
+
+                <button class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg transition">
+                    Learn More
+                </button>
+            </div>
+
+            <!-- Service Card -->
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+                <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-green-500/20 text-green-400 mb-6 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 01-8 0m8 0a4 4 0 00-8 0m8 0v1a4 4 0 01-8 0V7m-3 11h14" />
+                    </svg>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-3">
+                    Corporate Meal Packages
+                </h3>
+
+                <p class="text-gray-400 mb-6">
+                    Affordable meal plans designed for businesses, offices, and organizations.
+                </p>
+
+                <button class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg transition">
+                    Learn More
+                </button>
+            </div>
+
+            <!-- Service Card -->
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+                <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-purple-500/20 text-purple-400 mb-6 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M18 10c0 3.314-2.686 6-6 6S6 13.314 6 10s2.686-6 6-6 6 2.686 6 6zm0 0v6m0 0h-3m3 0h3" />
+                    </svg>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-3">
+                    Customer Support
+                </h3>
+
+                <p class="text-gray-400 mb-6">
+                    Friendly support team ready to assist with orders, inquiries, and feedback.
+                </p>
+
+                <button class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg transition">
+                    Learn More
+                </button>
+            </div>
+
+            <!-- Service Card -->
+            <div class="group bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20">
+                <div class="w-16 h-16 flex items-center justify-center rounded-xl bg-cyan-500/20 text-cyan-400 mb-6 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-3">
+                    Scheduled Meal Delivery
+                </h3>
+
+                <p class="text-gray-400 mb-6">
+                    Plan ahead with recurring meal deliveries tailored to your schedule.
+                </p>
+
+                <button class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg transition">
+                    Learn More
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Call To Action Banner -->
+        <div class="mt-20 bg-gradient-to-r from-red-700 via-red-600 to-blue-900 rounded-3xl overflow-hidden shadow-2xl">
+            <div class="grid lg:grid-cols-2 items-center">
+
+                <div class="p-10 md:p-14">
+                    <span class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        Premium Delivery Service
+                    </span>
+
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                        Fresh Nigerian Meals Delivered Fast
+                    </h3>
+
+                    <p class="text-red-100 mb-8 text-lg">
+                        Enjoy your favorite MamaPutOnline dishes prepared with care and delivered right to your home or office.
+                    </p>
+
+                    <button class="bg-white text-red-700 font-semibold px-8 py-3 rounded-xl hover:scale-105 transition duration-300">
+                        Order Now
+                    </button>
+                </div>
+
+                <div class="flex justify-center p-8">
+                    <img
+                        src="./images/delivery-rider.avif"
+                        alt="Food Delivery Service"
+                        class="w-full max-w-md rounded-2xl shadow-xl object-cover">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="mt-20">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
+                    <h4 class="text-sm font-bold text-red-400 mb-2">
+                        10,000+
+                    </h4>
+                    <p class="text-gray-300">
+                        Meals Delivered
+                    </p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
+                    <h4 class="text-sm font-bold text-blue-400 mb-2">
+                        5,000+
+                    </h4>
+                    <p class="text-gray-300">
+                        Happy Customers
+                    </p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
+                    <h4 class="text-3xl font-bold text-green-400 mb-2">
+                        99%
+                    </h4>
+                    <p class="text-gray-300 text-sm">
+                        Customer Satisfaction
+                    </p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
+                    <h4 class="text-3xl font-bold text-yellow-400 mb-2">
+                        24/7
+                    </h4>
+                    <p class="text-gray-300">
+                        Customer Support
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact Us Section -->
+<section class="bg-gradient-to-br from-slate-950 via-blue-950 to-red-950 py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Contact Us Header -->
+        <article class="text-center mb-16">
+            <span class="inline-flex items-center px-4 py-2 rounded-full bg-red-600/20 text-red-400 text-sm font-semibold border border-red-500/20">
+                Get In Touch
+            </span>
+
+            <h2 class="mt-5 text-4xl md:text-5xl font-extrabold text-white">
+                Contact Us
+            </h2>
+
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-300">
+                Have questions, feedback, or special requests? Our team is always ready to assist you.
+            </p>
+        </article>
+
+        <!-- Contact Information & Contact Form -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            <!-- Contact Information -->
+            <address class="not-italic space-y-6">
+
+                <!-- Contact Card -->
+                <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500">
+                    <div class="flex items-start gap-4">
+
+                        <div class="w-14 h-14 rounded-xl bg-red-600/20 flex items-center justify-center text-red-400 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657A8 8 0 1117.657 16.657z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">
+                                Office Location
+                            </h3>
+                            <p class="text-gray-300">
+                                Lagos, Nigeria
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500">
+                    <div class="flex items-start gap-4">
+
+                        <div class="w-14 h-14 rounded-xl bg-blue-600/20 flex items-center justify-center text-blue-400 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a2 2 0 011.89 1.37l1.08 3.24a2 2 0 01-.45 2.11l-1.27 1.27a16 16 0 006.36 6.36l1.27-1.27a2 2 0 012.11-.45l3.24 1.08A2 2 0 0121 18.72V22a2 2 0 01-2 2h-1C8.06 24 0 15.94 0 6V5a2 2 0 012-2z" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">
+                                Phone Number
+                            </h3>
+                            <p class="text-gray-300">
+                                +2347035349699
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-500">
+                    <div class="flex items-start gap-4">
+
+                        <div class="w-14 h-14 rounded-xl bg-green-600/20 flex items-center justify-center text-green-400 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 12H8m8-4H8m-2 8h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">
+                                Email Address
+                            </h3>
+                            <p class="text-gray-300 text-xs">
+                                support@mamaputonline.com
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-500">
+                    <div class="flex items-start gap-4">
+
+                        <div class="w-14 h-14 rounded-xl bg-yellow-500/20 flex items-center justify-center text-yellow-400 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">
+                                Business Hours
+                            </h3>
+                            <p class="text-gray-300">
+                                Monday – Sunday
+                            </p>
+                            <p class="text-gray-400 text-sm">
+                                8:00 AM – 10:00 PM
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </address>
+
+            <!-- Contact Form -->
+            <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+
+                <form class="space-y-6">
+
+                    <!-- Form Field -->
+                    <div>
+                        <label for="name" class="block text-white font-medium mb-2">
+                            Full Name
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            class="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"
+                            placeholder="Enter your full name">
+                    </div>
+
+                    <!-- Form Field -->
+                    <div class="grid md:grid-cols-2 gap-6">
+
+                        <div>
+                            <label for="email" class="block text-white font-medium mb-2">
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition"
+                                placeholder="you@example.com">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-white font-medium mb-2">
+                                Phone Number
+                            </label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                class="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition"
+                                placeholder="+234 XXX XXX XXXX">
+                        </div>
+
+                    </div>
+
+                    <!-- Form Field -->
+                    <div>
+                        <label for="subject" class="block text-white font-medium mb-2">
+                            Subject
+                        </label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            required
+                            class="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition"
+                            placeholder="Enter subject">
+                    </div>
+
+                    <!-- Form Field -->
+                    <div>
+                        <label for="message" class="block text-white font-medium mb-2">
+                            Message
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            required
+                            class="w-full px-4 py-3 bg-white/10 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition resize-none"
+                            placeholder="Write your message here..."></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-4 rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- CTA Banner -->
+        <div class="mt-20 bg-gradient-to-r from-red-700 via-red-600 to-blue-900 rounded-3xl overflow-hidden shadow-2xl">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 p-10 md:p-14">
+
+                <div>
+                    <span class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
+                        MamaPutOnline Special
+                    </span>
+
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                        Craving Authentic Nigerian Meals?
+                    </h3>
+
+                    <p class="text-red-100 max-w-2xl text-lg">
+                        Order your favorite dishes today and enjoy fast delivery right to your doorstep.
+                    </p>
+                </div>
+
+                <button class="bg-white text-red-700 font-bold px-8 py-4 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
+                    Order Now
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="mt-20">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 text-center hover:shadow-xl transition">
+                    <h4 class="text-xl font-extrabold text-red-400 mb-2">
+                        10,000+
+                    </h4>
+                    <p class="text-gray-300">
+                        Orders Delivered
+                    </p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 text-center hover:shadow-xl transition">
+                    <h4 class="text-xl font-extrabold text-blue-400 mb-2">
+                        5,000+
+                    </h4>
+                    <p class="text-gray-300">
+                        Happy Customers
+                    </p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 text-center hover:shadow-xl transition">
+                    <h4 class="text-3xl font-extrabold text-green-400 mb-2">
+                        99%
+                    </h4>
+                    <p class="text-gray-300 text-sm">
+                        Satisfaction Rate
+                    </p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 text-center hover:shadow-xl transition">
+                    <h4 class="text-3xl font-extrabold text-yellow-400 mb-2">
+                        24/7
+                    </h4>
+                    <p class="text-gray-300">
+                        Customer Support
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<marquee behavior="scroll" direction="right"> MamaPutOnline is your place for deliciuos meal at every point in time</marquee>
+
+<!-- Footer
+<footer class="bg-gradient-to-br from-slate-950 via-blue-950 to-red-950 border-t border-white/10 text-white fixed bottom-0 left-0 w-full z-50 overflow-y-auto max-h-screen"> -->
+
+    <!-- Top Footer Content -->
+    <div class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            <!-- Brand Section -->
+            <div>
+                <h2 class="text-3xl font-bold text-red-500 mb-4">
+                    MamaPutOnline
+                </h2>
+
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    Authentic Nigerian Meals Delivered Fresh To Your Doorstep.
+                </p>
+
+                <p class="text-gray-700 text-sm">
+                    Experience the taste of home with freshly prepared Nigerian dishes,
+                    fast delivery, and exceptional customer service.
+                </p>
+
+                <!-- Social Media Icons -->
+                <div class="flex flex-wrap gap-3 mt-6">
+
+                    <!-- Facebook -->
+                    <a href="https://web.facebook.com/" aria-label="Facebook" target="_blank" title="facebook"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-blue-600 hover:scale-110 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" title="instagram"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-pink-600 hover:scale-110 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm4.25 5a5 5 0 100 10 5 5 0 000-10zm6.25-.88a1.13 1.13 0 100 2.26 1.13 1.13 0 000-2.26z"/>
+                        </svg>
+                    </a>
+
+                    <!-- X -->
+                    <a href="https://x.com/i/premium_sign_up" target="_blank" aria-label="Twitter X" title="X"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-black hover:scale-110 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.9 2H22l-6.77 7.74L23 22h-6.18l-4.84-6.34L6.43 22H3.3l7.24-8.28L1 2h6.34l4.37 5.77L18.9 2z"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/login" aria-label="LinkedIn" target="_blank" title="linkedin"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-blue-700 hover:scale-110 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4.98 3.5A2.48 2.48 0 012.5 6a2.48 2.48 0 010-4.96A2.48 2.48 0 014.98 3.5zM0 8h5v16H0V8zm8 0h4.8v2.2h.07C13.54 8.95 15.37 8 17.74 8 22.4 8 24 11.06 24 15.04V24h-5v-7.78c0-1.86-.03-4.25-2.59-4.25-2.6 0-3 2.03-3 4.11V24H8V8z"/>
+                        </svg>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" title="youtube
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-red-600 hover:scale-110 transition-all duration-300">
+                        ▶
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/en/" aria-label="TikTok" target="_blank" title="tiktok"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-slate-700 hover:scale-110 transition-all duration-300">
+                        ♪
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold mb-5">
+                    Quick Links
+                </h3>
+
+                <ul class="space-y-3 text-gray-800">
+                    <li><a href="#" class="hover:text-red-400 transition">Home</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition">Menu</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition">Services</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-red-400 transition">FAQs</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="text-lg font-semibold mb-5">
+                    Customer Services
+                </h3>
+
+                <ul class="space-y-3 text-gray-800">
+                    <li>Fast Home Delivery</li>
+                    <li>Online Ordering</li>
+                    <li>Event Catering</li>
+                    <li>Corporate Meals</li>
+                    <li>Scheduled Delivery</li>
+                    <li>Customer Support</li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h3 class="text-lg font-semibold mb-5">
+                    Subscribe To Our Newsletter
+                </h3>
+
+                <p class="text-gray-700 mb-4">
+                    Get updates on meals, promotions and special offers.
+                </p>
+
+                <form class="space-y-3">
+                    <input
+                        type="email"
+                        placeholder="Enter email address"
+                        class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/ focus:outline-none focus:ring-2 focus:ring-red-500">
+
+                    <button
+                        class="w-full bg-red-600 hover:bg-red-700 py-3 rounded-xl font-medium transition">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+
+            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                Secure Payments
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                Fast Delivery
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                Quality Ingredients
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                Satisfaction Guarantee
+            </div>
+
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="flex flex-wrap justify-center gap-3 mt-10">
+
+            <span class="px-4 py-2 bg-white/10 rounded-full">Visa</span>
+            <span class="px-4 py-2 bg-white/10 rounded-full">Mastercard</span>
+            <span class="px-4 py-2 bg-white/10 rounded-full">Verve</span>
+            <span class="px-4 py-2 bg-white/10 rounded-full">Bank Transfer</span>
+            <span class="px-4 py-2 bg-white/10 rounded-full">USSD</span>
+
+        </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 bg-gray-800/10">
+
+            <p class="text-gray-800 text-center md:text-left">
+                © 2026 MamaPutOnline. All Rights Reserved.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-6 text-gray-800">
+                <a href="#" class="hover:text-red-400 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-red-400 transition">Terms & Conditions</a>
+                <a href="#" class="hover:text-red-400 transition">Cookie Policy</a>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+
+
+</body>
+</html>

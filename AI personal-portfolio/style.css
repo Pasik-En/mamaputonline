@@ -1,0 +1,704 @@
+/* ==========================================================================
+   1. DESIGN TOKENS & SYSTEM VARIABLES
+   ========================================================================== */
+:root {
+    /* Color Palette (Yankee Theme Architecture) */
+    --color-bg-primary: #0b132b;       /* Deep Base / Yankee Dark Blue */
+    --color-bg-secondary: #1c2e4a;     /* Surface Elements / Yankee Blue */
+    --color-bg-tertiary: #243b5e;      /* Interactive Cards / Hover State */
+    
+    --color-text-main: #f4f6f9;        /* High Contrast Typography */
+    --color-text-muted: #94a3b8;       /* Low Contrast / Secondary Typography */
+    
+    --color-primary: #38bdf8;          /* Bright Tech Cyan Accent */
+    --color-accent: #b22234;           /* Action CTA / Yankee Red */
+    --color-border: #2e476c;           /* Subtle Layout Partition Borders */
+
+    /* Typography Scale */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
+
+    /* Layout & Animation Spacing Rules */
+    --max-width: 1200px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --header-height: 70px;
+}
+
+/* ==========================================================================
+   2. MODERN CSS RESET & GLOBAL BASES
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    margin-top: var(--header-height); /* Prevents content jump below sticky header */
+}
+
+/* Accessible Skip-Link Architecture */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 10px 20px;
+    z-index: 9999;
+    text-decoration: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Base Component Typography & Section Structure */
+section {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-container {
+    width: 100%;
+    max-width: var(--max-width);
+   
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    color: var(--color-text-main);
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   3. STICKY NAVIGATION BAR
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: rgba(11, 19, 43, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.brand-logo strong {
+    color: var(--color-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--color-primary);
+}
+
+/* Mobile Nav Toggle Button (Hidden by default on Desktop) */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* ==========================================================================
+   4. HERO SECTION (Two-Column Partition Layout)
+   ========================================================================== */
+#hero {
+    min-height: calc(85vh - var(--header-height));
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+}
+
+.hero-container {
+    width: 100%;
+    max-width: var(--max-width);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-subheading {
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+#hero-heading {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-lead {
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+    max-width: 600px;
+}
+
+/* CTA Interface Architecture */
+.hero-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #d62839;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-bg-secondary);
+    border-color: var(--color-primary);
+}
+
+/* Hero Portrait Canvas Wrapper */
+.hero-content-right {
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--color-border);
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   5. ABOUT SECTION & TECHNICAL STACK
+   ========================================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.about-narrative p {
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+}
+
+.about-skills h3 {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    background-color: var(--color-bg-secondary);
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-primary);
+}
+
+/* ==========================================================================
+   6. FEATURED PROJECTS (3-Card Rigid Responsive Grid)
+   ========================================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-primary);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Fixed 16:9 Aspect Ratio aspect constraint */
+    overflow: hidden;
+}
+
+.project-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-details {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.project-details p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tech-tags li {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background-color: var(--color-bg-primary);
+    color: var(--color-primary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+}
+
+.project-links {
+    display: flex;
+    gap: 16px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 16px;
+}
+
+.project-links a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+.project-links a:hover {
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   7. PROMPT ENGINEERING SECTION (5-Card Modular System)
+   ========================================================================== */
+.section-intro {
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+/* .prompts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+} */
+
+/* Rules ensuring proper parsing mapping for 5 cards layout gracefully */
+/* @media (min-width: 1100px) {
+    .prompt-card:nth-child(1),
+    .prompt-card:nth-child(2) {
+        grid-column: span 1;
+    }
+}
+
+.prompt-card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.prompt-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+.prompt-code-block {
+    background-color: var(--color-bg-primary);
+    border-left: 3px solid var(--color-accent);
+    padding: 16px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.prompt-code-block p {
+    color: #e2e8f0;
+    margin: 0;
+    font-style: italic;
+}
+
+.prompt-context {
+    font-size: 0.9rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 12px;
+} */
+
+/* ==========================================================================
+   8. VIBE ENGINEERING SECTION
+   ========================================================================== */
+/* #vibe-engineering {
+    background-color: var(--color-bg-secondary);
+}
+
+.vibe-content {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+}
+
+.vibe-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: var(--color-text-main);
+}
+
+.vibe-content strong {
+    color: var(--color-primary);
+} */
+
+/* ==========================================================================
+   9. CONTACT SECTION & ACCESSIBLE INPUT FORMS
+   ========================================================================== */
+.contact-form {
+    max-width: 600px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 3rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    color: var(--color-primary);
+}
+
+.form-field input,
+.form-field textarea {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-main);
+    padding: 14px 16px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition-smooth);
+    width: 100%;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.contact-form .btn {
+    align-self: flex-start;
+}
+
+/* ==========================================================================
+   10. STICKY FOOTER ARCHITECTURE
+   ========================================================================== */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-bg-primary);
+    border-top: 1px solid var(--color-border);
+    padding: 30px 20px 40px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.footer-container p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-socials a {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.footer-socials a:hover {
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   11. FLUID RESPONSIVE MEDIA BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet & Smaller Display Adaptations (968px and down) */
+@media screen and (max-width: 968px) {
+    html {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-content-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #hero-heading {
+        font-size: 2.75rem;
+    }
+
+    .hero-cta-group {
+        justify-content: center;
+    }
+
+    .hero-content-right {
+        order: -1; /* Pushes the image above the text on mobile viewports */
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+     footer {
+        margin-top: 2rem;
+    }
+
+}
+
+/* Mobile Viewport Adaptations (768px and down) */
+@media screen and (max-width: 768px) {
+    /* Reveals Hamburger Trigger Layout */
+    .mobile-nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .hamburger-icon,
+    .hamburger-icon::before,
+    .hamburger-icon::after {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--color-text-main);
+        position: relative;
+        transition: var(--transition-smooth);
+    }
+
+    .hamburger-icon::before,
+    .hamburger-icon::after {
+        content: '';
+        position: absolute;
+    }
+
+    .hamburger-icon::before { top: -6px; }
+    .hamburger-icon::after { bottom: -6px; }
+
+    /* Transforms Top Menu Links Layer into Mobile Flyout Drawer Overlay */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: var(--color-bg-secondary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        transition: var(--transition-smooth);
+    }
+
+    /* Active state when JS appends a class toggling state (Ex: .nav-active) */
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}

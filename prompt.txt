@@ -1,0 +1,447 @@
+PROMPT 1- Header/ Nav Section.
+Help me build the Header and Navigation Bar for MamaPutOnline using HTML5, TailwindCSS, and JavaScript. Include a logo, restaurant name, centered navigation links, dropdown menus, sticky navigation, search bar, hover effects, and responsive hamburger menu.
+
+PROMPT 2 - Hero Section
+Build a premium Hero Section for MamaPutOnline with a two-column layout. The left side should contain a compelling headline, restaurant description, and CTA buttons. The right side should display a high-quality image of a steaming Nigerian meal. Use TailwindCSS and ensure the section is fully responsive.
+
+PROMPT 3 - Product Section
+Create 18 professional food product cards.
+
+Each card must contain:
+
+Food Image
+Food Name
+Price
+Discount Badge
+Quantity Selector
+Order Button
+
+Include all dishes listed above.
+
+Product Card Effects:
+
+Hover Zoom
+Hover Shadow
+Scale Animation
+Smooth Transitions
+
+Grid Layout:
+
+Desktop:
+6 cards per row
+
+Tablet:
+3 cards per row
+
+Mobile:
+1–2 cards per row
+
+PROMPT 4 - About Us Section 
+Build a premium About Us section. Create a left-side navigation panel with links to all sections. On the right side, add a professional restaurant story, high-quality food images, statistics cards, mission statement, and attractive hover animations using TailwindCSS.
+
+PROMPT 5 - Customer Services
+
+Build a premium and fully responsive Customer Services section for an online Nigerian restaurant called MamaPutOnline using HTML and TailwindCSS.
+
+Design Requirements:
+
+1. Create a visually attractive section with a modern restaurant theme.
+2. Use a background color that complements the website's dark-red and deep-blue color palette.
+3. Add a professional section heading:
+   "Customer Services"
+4. Add a compelling subheading:
+   "We are committed to providing exceptional service and delicious meals delivered with care."
+
+5. Create six service cards arranged in a responsive grid.
+
+Services should include:
+
+Fast Home Delivery
+Online Food Ordering
+Event Catering Services
+Corporate Meal Packages
+Customer Support
+Scheduled Meal Delivery
+
+6. Each service card should contain:
+   A professional icon
+   Service title
+   Short description
+   Learn More button
+
+7. Add modern card effects:
+   Hover scale animation
+   Hover shadow effect
+   Smooth transitions
+   Icon animation on hover
+
+8. Add a featured banner beneath the service cards containing:
+   A delivery illustration or image
+   Promotional text
+   "Order Now" button
+
+9. Add a customer satisfaction statistics section showing:
+   10,000+ Meals Delivered
+   5,000+ Happy Customers
+   99% Customer Satisfaction
+   24/7 Customer Support
+
+10. Make the section fully responsive:
+    Desktop: 3 cards per row
+    Tablet: 2 cards per row
+    Mobile: 1 card per row
+
+11. Use semantic HTML structure.
+
+12. Ensure the design matches a premium food delivery platform and maintains consistency with the MamaPutOnline branding.
+
+Generate clean, well-commented, production-ready code using TailwindCSS only.
+
+PROMPT 6 - Contact Us
+Build a premium, modern, and fully responsive Contact Us section for an online Nigerian restaurant brand called MamaPutOnline** using HTML and TailwindCSS only.
+
+Design Requirements
+
+1. Create a visually appealing and professional Contact Us section that matches a premium food delivery platform.
+
+2. Use a color scheme consistent with MamaPutOnline branding:
+
+    Dark Red
+    Deep Blue
+    White accents
+    Soft gradients and glassmorphism effects where appropriate
+
+3. Add a section header containing:
+
+   Small badge: **"Get In Touch"**
+   Main heading: **"Contact Us"**
+   Subheading:
+     Have questions, feedback, or special requests Our team is always ready to assist you.
+
+4. Create a responsive two-column layout:
+
+   Left side: Contact Information
+   Right side: Contact Form
+
+Contact Information Area
+
+Include attractive information cards for:
+
+ Office Location
+
+   Lagos, Nigeria
+
+ Business Hours
+
+   Monday – Sunday
+   8:00 AM – 10:00 PM
+
+Each card should contain:
+
+ Professional icon
+ Title
+ Information text
+ Hover effect
+
+Contact Form
+
+Include the following fields:
+
+ Full Name
+ Email Address
+ Phone Number
+ Subject
+ Message
+
+Form Requirements:
+
+ Modern input styling
+ Focus states
+ Rounded corners
+ Accessible labels
+ Validation-ready structure
+ Responsive layout
+
+Add a prominent:
+"Send Message"button
+
+Additional Features
+
+Create a premium CTA banner beneath the form section containing:
+
+ Short promotional message:
+
+Supporting text:
+  Order your favorite dishes today and enjoy fast delivery right to your doorstep.
+
+ CTA Button:
+Order Now
+Statistics Section
+
+Add a customer trust section displaying:
+
+ 10,000+ Orders Delivered
+ 5,000+ Happy Customers
+ 99% Satisfaction Rate
+ 24/7 Customer Support
+
+Animations & Effects
+
+Include:
+
+ Hover scale effects
+ Hover shadows
+ Smooth transitions
+ Button hover animations
+ Icon hover animations
+ Glassmorphism cards
+ Gradient backgrounds
+
+
+PROMPT 7 - Footer section
+Act as a Senior Frontend Developer and UI/UX Designer.
+
+Build a premium, modern, fully responsive, and sticky footer for an online Nigerian restaurant brand called MamaPutOnline using **HTML5 and TailwindCSS only.
+
+## Footer Requirements
+
+1. Sticky Footer Behavior
+
+The footer must always remain at the bottom of the page, even when page content is short.
+
+Requirements:
+
+Use a proper sticky footer layout approach
+Footer should naturally sit below content
+Full-width footer
+Responsive across all devices
+Production-ready implementation
+
+2. Design Style
+
+Create a luxury food-delivery-themed footer that matches MamaPutOnline branding.
+
+Color Palette:
+
+Dark Red (#991B1B style)
+Deep Blue (#172554 style)
+White accents
+Soft gradients
+Glassmorphism effects where appropriate
+
+Design Feel:
+
+Premium
+Modern
+Trustworthy
+Restaurant/Food Delivery focused
+
+3. Footer Header Section
+
+Add a branded footer introduction containing:
+
+Logo/Brand Name:
+MamaPutOnline
+
+Tagline:
+Authentic Nigerian Meals Delivered Fresh To Your Doorstep.
+
+Short Description:
+Experience the taste of home with freshly prepared Nigerian dishes, fast delivery, and exceptional customer service.
+
+4. Footer Layout
+
+Create a responsive 4-column footer layout.
+
+#### Column 1 – About MamaPutOnline
+
+Include:
+
+Company description
+Mission statement
+
+Column 2 – Quick Links
+
+Include:
+
+Home
+About Us
+Menu
+Services
+Contact Us
+FAQs
+
+Column 3 – Customer Services
+
+Include:
+
+Fast Home Delivery
+Online Ordering
+Event Catering
+Corporate Meals
+Scheduled Delivery
+Customer Support
+
+Column 4 – Contact Information
+
+Include:
+
+Lagos, Nigeria
+support@mamaputonline.com mailto:support@mamaputonline.com
+Phone number
+Monday – Sunday
+8:00 AM – 10:00 PM
+
+### 5. Social Media Section
+
+Create a dedicated social media area with modern circular icon buttons.
+
+Include icons for:
+
+Facebook
+Instagram
+X (Twitter)
+LinkedIn
+YouTube
+TikTok
+WhatsApp
+Telegram
+Requirements:
+
+SVG icons only
+Hover scale animation
+Hover glow effect
+Hover color transitions
+Accessible aria-labels
+Circular buttons
+Equal spacing
+
+6. Newsletter Subscription
+
+Add a newsletter section containing:
+
+Heading:
+Subscribe to Our Newsletter
+
+Description:
+Get updates on new meals, promotions, and special offers.
+
+Fields:
+
+Email Address Input
+Subscribe Button
+
+Requirements:
+
+Modern styling
+Focus states
+Rounded corners
+Responsive layout
+
+7. Payment Methods Section
+
+Add a payment area displaying support for:
+
+Visa
+Mastercard
+Verve
+Bank Transfer
+USSD Payments
+
+Display as modern badges/cards.
+
+8. Trust & Security Section
+
+Include:
+
+Secure Payments
+Fast Delivery
+Quality Ingredients
+Customer Satisfaction Guarantee
+
+Each should have:
+
+Small icon
+Short text
+
+9. Footer Bottom Bar
+
+Create a premium copyright section containing:
+
+Left Side:
+© 2026 MamaPutOnline. All Rights Reserved.
+
+Right Side:
+
+Privacy Policy
+Terms & Conditions
+Cookie Policy
+
+10. Animations & Effects
+
+Include:
+
+Hover scale effects
+Smooth transitions
+Hover shadows
+Social icon animations
+Glassmorphism cards
+Gradient borders
+Subtle divider lines
+
+11. Responsive Requirements
+
+Desktop:
+
+4-column layout
+Horizontal footer bottom bar
+
+Tablet:
+
+2-column layout
+
+Mobile:
+
+Single-column layout
+Centered content
+Stacked footer bottom bar
+
+12. Semantic HTML Structure
+
+Use:
+
+footer
+nav
+address
+section
+ppropriate heading hierarchy
+
+13. Comments
+
+Add clear comments throughout the code:
+
+
+Sticky Footer Container
+Footer Header
+Footer Navigation
+Social Media Section
+Newsletter Section
+Payment Methods
+Trust & Security
+Footer Bottom 
+
+Output Requirements
+
+Generate:
+
+Clean production-ready HTML5
+TailwindCSS classes only
+No external CSS
+No JavaScript
+SVG icons included
+Fully responsive
+Sticky footer implementation included
+Premium UI matching MamaPutOnline branding
+Well-commented code
+Accessible and SEO-friendly structure
+Modern food delivery platform design quality

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Frontend Engineer | Personal Portfolio</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <meta name="description" content="Professional portfolio of a Senior Frontend Engineer specializing in semantic web architecture, performance optimization, prompt engineering, and UI design.">
+</head>
+
+<body>
+
+    <!-- Skip to Content Link for Keyboard Accessibility (a11y) -->
+    <!-- <a href="#main-content" class="skip-link">Skip to main content</a> -->
+
+    <!-- GLOBAL NAVIGATION HEADER -->
+    <header>
+        <div class="nav-container">
+            <!-- Brand Identity / Logo -->
+            <a href="#hero" class="brand-logo" aria-label="Portfolio Home">
+                <strong>Paschal</strong>.tech
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav aria-label="Primary Navigation">
+                <!-- Mobile Menu Toggle Button (State handled via JS later) -->
+                <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                    <span class="hamburger-icon" aria-hidden="true"></span>
+                </button>
+
+                <ul id="nav-menu" class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main id="main-content">
+
+        <!-- HERO SECTION: Two-Column Partition Layout -->
+        <section id="hero" aria-labelledby="hero-heading">
+            <div class="hero-container">
+                <!-- Left Partition: Text Content & Action Links -->
+                <div class="hero-content-left">
+                    <p class="hero-subheading">Welcome to my professional space</p>
+                    <h1 id="hero-heading">Building High-Performance User Experiences & AI-Driven Interfaces</h1>
+                    <p class="hero-lead">
+                        I am a Senior Frontend Engineer dedicated to crafting semantic, accessible, and scalable web architectures. Bridging the gap between robust engineering, modern AI integration, and fluid product vibes.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <!-- Resume Download Action Button -->
+                        <a href="assets/docs/resume.pdf" class="btn btn-secondary" download="Senior_Frontend_Engineer_Resume.pdf" aria-label="Download Professional Resume PDF">
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Partition: Professional Portrait / Structural Graphic Image -->
+                <div class="hero-content-right">
+                    <div class="image-wrapper">
+                        <img src="assets/images/hero-profile.webp" alt="Professional portrait of the Senior Frontend Engineer in a workspace setting" width="600" height="600" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION: Narrative & Core Technical Stack -->
+        <section id="about" aria-labelledby="about-heading">
+            <div class="section-container">
+                <marquee behavior="scroll" direction="right">I am a Senior Fullstack Engineer dedicated to creating a mordern and scalable web architectures</marquee>
+                <h2 id="about-heading">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-narrative">
+                        <p>
+                            With over a decade of experience navigating the frontend ecosystem, I specialize in transforming complex business workflows into highly responsive, accessible interface systems. My engineering philosophy prioritizes component atomicity, clean architectural design tokens, and rigorous performance metrics.
+                        </p>
+                    </div>
+                    <!-- Technical Skills Categorization -->
+                    <div class="about-skills">
+                        <h3>Core Tech Stack</h3>
+                        <ul class="skills-list">
+                            <li>Semantic HTML5 / Advanced CSS3 / Sass</li>
+                            <li>TypeScript / JavaScript (ES6+)</li>
+                            <li>React / Next.js / Vue.js</li>
+                            <li>Web Performance Tuning / Critical Rendering Path</li>
+                            <li>WCAG 2.1 AA Accessibility Standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS SECTION: Responsive 3-Card Layout with Unique Images -->
+        <section id="projects" aria-labelledby="projects-heading">
+            <div class="section-container">
+                <h2 id="projects-heading">Featured Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Project Card 1 -->
+                    <article class="project-card">
+                        <div class="project-image-container">
+                            <img src="assets/images/projects/enterprise-dashboard.webp" alt="Analytical chart dashboard interface displaying real-time data visualization metrics" width="400" height="250" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3>Enterprise Data Dashboard</h3>
+                            <p>A high-performance monitoring interface engineered using Web Sockets and advanced state machines to render high-throughput streaming metrics.</p>
+                            <ul class="tech-tags" aria-label="Technologies used">
+                                <li>React</li>
+                                <li>TypeScript</li>
+                                <li>CSS Grid</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://example.com/live1" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="https://github.com/example/repo1" target="_blank" rel="noopener noreferrer">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2 -->
+                    <article class="project-card">
+                        <div class="project-image-container">
+                            <img src="assets/images/projects/ecommerce-platform.webp" alt="E-commerce store storefront displaying grid view of clean product items" width="400" height="250" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3>Next-Gen E-Commerce Platform</h3>
+                            <p>An accessible storefront featuring sub-second page loads, fully atomic UI component architectures, and server-side rendering strategies.</p>
+                            <ul class="tech-tags" aria-label="Technologies used">
+                                <li>Next.js</li>
+                                <li>Tailwind CSS</li>
+                                <li>GraphQL</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://example.com/live2" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="https://github.com/example/repo2" target="_blank" rel="noopener noreferrer">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3 -->
+                    <article class="project-card">
+                        <div class="project-image-container">
+                            <img src="assets/images/projects/design-system.webp" alt="A UI component documentation layout mapping buttons, forms, and custom inputs" width="400" height="250" loading="lazy">
+                        </div>
+                        <div class="project-details">
+                            <h3>Aura Component Design System</h3>
+                            <p>A strictly typed, WCAG-compliant design system engineered to scale atomic components across multiple multi-tenant application domains.</p>
+                            <ul class="tech-tags" aria-label="Technologies used">
+                                <li>HTML5</li>
+                                <li>Vanilla CSS</li>
+                                <li>Storybook</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://example.com/live3" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="https://github.com/example/repo3" target="_blank" rel="noopener noreferrer">Source Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMPT ENGINEERING SECTION: 5 Engineering Cards -->
+        <!-- <section id="prompt-engineering" aria-labelledby="prompt-heading">
+            <div class="section-container">
+                <h2 id="prompt-heading">Prompt Engineering Expertise</h2>
+                <p class="section-intro">Demonstrating advanced interaction paradigms with Large Language Models to accelerate development cycles and runtime application parsing.</p>
+                 -->
+                <!-- <div class="prompts-container"> -->
+                    
+                    <!-- Prompt Card 1 -->
+                    <!-- <article class="prompt-card">
+                        <h3>1. Design System Component Generator</h3>
+                        <blockquote class="prompt-code-block">
+                            <p>"Act as a principal frontend architect. Generate a fully accessible (WCAG 2.1 AA compliance) custom selector element using pure HTML5 and vanilla CSS. Document all layout variables, token mappings, and keyboard-focus requirements explicitly."</p>
+                        </blockquote>
+                        <p class="prompt-context"><strong>Use Case:</strong> Accelerating rapid component prototyping phases while enforcing strict, accessible semantic baselines.</p>
+                    </article> -->
+
+                    <!-- Prompt Card 2 -->
+                    <!-- <article class="prompt-card">
+                        <h3>2. CSS Performance Profiler & Refactor</h3>
+                        <blockquote class="prompt-code-block">
+                            <p>"Analyze the following legacy CSS document. Identify all layout bottlenecks causing rendering reflows or heavy repaints. Refactor deep class nesting chains into flat, high-performance, layout-engine optimal rules."</p>
+                        </blockquote>
+                        <p class="prompt-context"><strong>Use Case:</strong> Automating structural analysis of legacy stylesheets to achieve 100/100 Lighthouse performance metrics.</p>
+                    </article> -->
+
+                    <!-- Prompt Card 3 -->
+                    <!-- <article class="prompt-card">
+                        <h3>3. Zero-Shot Semantic Markup Validations</h3>
+                        <blockquote class="prompt-code-block">
+                            <p>"Review this application DOM tree structure. Identify instances of semantic violations, over-nested generic containers, and incomplete ARIA mappings. Output a corrected, streamlined semantic map."</p>
+                        </blockquote>
+                        <p class="prompt-context"><strong>Use Case:</strong> Implementing an AI-driven preprocessing audit step before committing major layout updates.</p>
+                    </article> -->
+
+                    <!-- Prompt Card 4 -->
+                    <!-- <article class="prompt-card">
+                        <h3>4. Design Token Tokenization Automator</h3>
+                        <blockquote class="prompt-code-block">
+                            <p>"Translate this raw raw-format JSON design spec array containing hex values and pixel dimensions into standard, cleanly organized CSS Custom Properties scoped properly under root. Apply semantic taxonomy naming schemas."</p>
+                        </blockquote>
+                        <p class="prompt-context"><strong>Use Case:</strong> Bridging cross-functional Figma engineering hands-off assets into raw code ecosystems systematically.</p>
+                    </article> -->
+
+                    <!-- Prompt Card 5 -->
+                    <!-- <article class="prompt-card">
+                        <h3>5. Interactive State Machine Sandbox Spec</h3>
+                        <blockquote class="prompt-code-block">
+                            <p>"Draft a clear logic step sequence managing multi-step checkout form states. Outline edge behaviors for layout mutations, input validation triggers, and screen reader announcements on error transitions."</p>
+                        </blockquote>
+                        <p class="prompt-context"><strong>Use Case:</strong> Defining the system architecture specifications cleanly before writing a single line of component script.</p>
+                    </article> -->
+
+                <!-- </div>
+            </div>
+        </section> -->
+
+        <!-- VIBE ENGINEERING SECTION: Aesthetic Alignment & Philosophy -->
+        <!-- <section id="vibe-engineering" aria-labelledby="vibe-heading">
+            <div class="section-container">
+                <h2 id="vibe-heading">Vibe Engineering Philosophy</h2>
+                <div class="vibe-content">
+                    <p>
+                        Software isn't just about passing tests and structural rendering; it's about the intangible feeling an interface gives the person interacting with it. <strong>Vibe Engineering</strong> is the deliberate tuning of micro-interactions, layout transitions, perceived performance optimization, and visual balance.
+                    </p>
+                    <p>
+                        It is the fine-grained polish—such as a perfectly executed spring physics curve on a viewport shift, responsive loading skeletons that prevent layout jank, or contextual light-dark transitions that match ambient hardware environments. It transforms utility into an engaging, deliberate experience.
+                    </p>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- CONTACT SECTION: Accessible Form Architecture -->
+        <section id="contact" aria-labelledby="contact-heading">
+            <div class="section-container">
+                <h2 id="contact-heading">Get In Touch</h2>
+                <p>Have an interesting project proposal, dynamic engineering challenge, or system deployment architecture to build? Drop a line.</p>
+                
+                <!-- Explicit form fields linked with label for screen reader matching -->
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-field">
+                        <label for="form-name">Full Name</label>
+                        <input type="text" id="form-name" name="name" required placeholder="Your Name">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="form-email">Email Address</label>
+                        <input type="email" id="form-email" name="email" required placeholder="email@example.com">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="form-message">Message</label>
+                        <textarea id="form-message" name="message" rows="6" required placeholder="Enter your message"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- GLOBAL FOOTER SECTION -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Ndu Paschal. All rights reserved.</p>
+            
+            <!-- Accessible External Networks Anchor Links -->
+            <ul class="footer-socials" aria-label="Professional Social Networks Links">
+                <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Developer Profile Link">GitHub</a></li>
+                <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Professional Network Profile Link">LinkedIn</a></li>
+                <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter Professional Profile Link">Twitter / X</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

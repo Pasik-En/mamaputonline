@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paschal | Software Developer Portfolio</title>
+    <meta name="description" content="Professional portfolio of Paschal, a Software Developer specializing in clean code, styling, and user-centric design.">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+
+    <link rel="stylesheet" href="./new.css">
+</head>
+<body>
+
+   <header class="main-header">
+        <nav class="nav-container" aria-label="Main Navigation">
+            <div class="nav-logo">
+                <a href="#home" aria-label="Paschal Home">Paschal</a>
+            </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" aria-label="Toggle Navigation Menu">
+            
+            <label for="menu-toggle" class="hamburger-label" aria-hidden="true">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </label>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <section id="home" class="hero-section" aria-label="Introduction and Overview">
+            <div class="hero-container">
+                
+                <div class="hero-text-content">
+                    <p class="hero-subheading">Hi, my name is</p>
+                    <h1 class="hero-title">Paschal.</h1>
+                    <h2 class="hero-tagline">Software Developer</h2>
+                    <p class="hero-description">
+                        A software developer who loves building digital solutions that make everyday life easy. Passionate about clean code, styling, JavaScript, and user-centric design.
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <a href="doc/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-filled">Download CV</a>
+                        <a href="#projects" class="btn btn-outline">View Projects</a>
+                    </div>
+
+                    <div class="skills-badges-container" aria-label="Core Technologies Toolkit">
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">AI</span>
+                        <span class="badge">Full Stack Development</span>
+                    </div>
+                </div>
+
+                <div class="hero-image-content">
+                    <div class="profile-glow-wrapper">
+                        <img src="616314386256163888.jpeg" alt="Paschal's Profile Portrait" class="profile-photo">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about" class="about-section" aria-label="About Me Profile">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-highlight">
+                        Currently a student, building real-world projects to grow my skills.
+                    </p>
+                    <p>
+                        A software developer who loves building digital solutions that make everyday life easy. Passionate about clean code, styling, JavaScript, and user-centric design.
+                    </p>
+                    <a href="doc/resume.pdf" class="btn btn-resume" download>Download Resume / CV</a>
+                </div>
+
+                <div class="about-image">
+                    <div class="about-frame-placeholder"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section" aria-label="Portfolio Engineering Projects Gallery">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-grid">
+                
+                <article class="project-card" aria-labelledby="proj-title-1">
+                    <div class="project-info">
+                        <div class="project-card-header">
+                            <h3 id="proj-title-1" class="project-title">Personal Portfolio</h3>
+                            <span class="project-type-badge">Static Web</span>
+                        </div>
+                        
+                        <p class="project-summary">
+                            A learning-focused project to build a personal online presence and showcase skills to potential employers.
+                        </p>
+                        
+                        <div class="project-spec-rows">
+                            <div class="spec-row">
+                                <span class="spec-label">Design:</span>
+                                <span class="spec-value">Planned layout in Figma-style wireframe thinking — hero, about, projects, footer.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Coding:</span>
+                                <span class="spec-value">Built with semantic HTML and custom CSS following a dark tech visual theme.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Delivery:</span>
+                                <span class="spec-value">Hosted as a static site. Optimized for readability and mobile responsiveness.</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card-action">
+                            <a href="#projects" class="btn btn-card-action">View Project</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" aria-labelledby="proj-title-2">
+                    <div class="project-info">
+                        <div class="project-card-header">
+                            <h3 id="proj-title-2" class="project-title">B-Electronic</h3>
+                            <span class="project-type-badge">E-Commerce / Static</span>
+                        </div>
+                        
+                        <p class="project-summary">
+                            A static e-commerce concept site for an electronics store — built to practice product layout, card grids, and CSS styling.
+                        </p>
+                        
+                        <div class="project-spec-rows">
+                            <div class="spec-row">
+                                <span class="spec-label">Design:</span>
+                                <span class="spec-value">Mapped product categories and user flow before coding.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Coding:</span>
+                                <span class="spec-value">Used CSS Grid for product listings and Flexbox for the navbar and cart preview.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Delivery:</span>
+                                <span class="spec-value">Static site with consistent branding and a clean shopping UI.</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card-action">
+                            <a href="#projects" class="btn btn-card-action">View Project</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" aria-labelledby="proj-title-3">
+                    <div class="project-info">
+                        <div class="project-card-header">
+                            <h3 id="proj-title-3" class="project-title">Nexus</h3>
+                            <span class="project-type-badge">Digital Solutions</span>
+                        </div>
+                        
+                        <p class="project-summary">
+                            A digital solutions showcase website built to demonstrate service offerings and professional presentation.
+                        </p>
+                        
+                        <div class="project-spec-rows">
+                            <div class="spec-row">
+                                <span class="spec-label">Design:</span>
+                                <span class="spec-value">Focused on strong visual hierarchy and call-to-action placement.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Coding:</span>
+                                <span class="spec-value">Structured with reusable CSS classes and modular HTML sections.</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Delivery:</span>
+                                <span class="spec-value">Clean, professional static site with responsive layout.</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card-action">
+                            <a href="#projects" class="btn btn-card-action">View Project</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section" aria-label="Contact Channel Channels">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-prompt">
+                Whether you have an upcoming project, a technical challenge to solve, or just want to say hello, my inbox is always open.
+            </p>
+            <div class="contact-action">
+                <a href="mailto:paschal@example.com" class="btn btn-contact">Say Hello</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer" aria-label="Site Footer and Social Directory">
+        <div class="footer-copyright">
+            <small>&copy; 2026 Ndu Paschal. Built with HTML & CSS.</small>
+        </div>
+
+        <div class="footer-tagline">
+            <span>Crafted with passion & clean code</span>
+        </div>
+        
+        <div class="footer-socials" aria-label="Professional Social Networks">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Paschal's LinkedIn Profile">LinkedIn</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Paschal's GitHub Repository Profile">GitHub</a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Paschal's X (Twitter) Feed Profile">X</a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="Paschal's TikTok Feed Channel">TikTok</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Paschal's Facebook Profile Page">Facebook</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

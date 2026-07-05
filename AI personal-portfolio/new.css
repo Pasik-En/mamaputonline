@@ -1,0 +1,626 @@
+/* ==========================================================================
+   0. FONTS IMPORT & CSS VARIABLES DEFINITION MATRIX
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@700&display=swap');
+
+:root {
+    /* Color Palette Configuration */
+    --bg-color: #0a0a0f;              /* Near-black dark space */
+    --surface-color: #12121a;         /* Elevated layer card background */
+    --primary-accent: #00d4ff;        /* Cyber electric cyan */
+    --secondary-accent: #7b5ea7;      /* Tech neon dark purple */
+    --text-primary: #e8e8f0;          /* Primary visual readability text */
+    --text-muted: #6b6b80;            /* Desaturated auxiliary descriptions */
+    --border-color: #1e1e2e;          /* Fine separation alignment line color */
+    
+    /* Typography Token Rules */
+    --font-headings: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Engineering Structural Dimensions */
+    --max-width: 1100px;
+    --nav-height: 70px;
+    --footer-height: auto;             /* Flex-responsive height management overrides */
+    
+    /* Reusable Animation Vectors */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   1. GLOBAL ARCHITECTURE & SYSTEM RESET (MOBILE-FIRST PRINCIPLE)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    padding-top: var(--nav-height); /* Buffer avoids layout concealment by navbar */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Base Headings Specifications */
+h1, h2, h3 {
+    font-family: var(--font-headings);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.25rem; line-height: 1.2; }
+h2 { font-size: 1.75rem; line-height: 1.3; }
+h3 { font-size: 1.25rem; line-height: 1.4; }
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+ul { list-style: none; }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. GENERIC UTILITIES & UI SHAPE COMPONENT DEFINITIONS
+   ========================================================================== */
+section {
+    min-height: 100vh;
+    padding: 5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.section-title {
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--secondary-accent);
+}
+
+/* Universal Button Design Systems */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.btn-filled {
+    background-color: var(--primary-accent);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+.btn-filled:hover {
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. STICKY HEADER & FLOATING NAVIGATION MANAGEMENT
+   ========================================================================== */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    font-family: var(--font-headings);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.nav-links a {
+    font-family: var(--font-headings);
+    font-size: 0.9rem;
+    position: relative;
+    padding: 0.4rem 0;
+    color: var(--text-muted);
+}
+
+.nav-links a:hover { color: var(--primary-accent); }
+
+/* Glowing Cyan Navigation Active Underline Node */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-accent);
+    box-shadow: 0 0 10px var(--primary-accent);
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+/* ==========================================================================
+   4. HERO DISPLAY BLOCK (MOBILE STRUCTURE CORES)
+   ========================================================================== */
+.hero-container {
+    display: flex;
+    flex-direction: column-reverse; /* Enforces photo on top on narrow layout viewports */
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.hero-text-content { text-align: center; }
+
+.hero-subheading {
+    color: var(--primary-accent);
+    font-family: var(--font-headings);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title { margin-bottom: 0.5rem; }
+.hero-tagline { color: var(--text-muted); margin-bottom: 1.5rem; }
+.hero-description { color: var(--text-muted); margin-bottom: 2rem; }
+
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+/* Skills badging container controls */
+.skills-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-family: var(--font-headings);
+    font-weight: 700;
+    color: var(--primary-accent);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    background: rgba(0, 212, 255, 0.02);
+}
+
+/* Radial Glow Frame Engine */
+.profile-glow-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, #00d4ff, #7b5ea7, #00d4ff);
+    background-size: 200% 200%;
+    animation: gradientShift 4s linear infinite;
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.35);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: var(--surface-color);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ==========================================================================
+   5. ABOUT ME PORTRAIT GRID BLOCKS
+   ========================================================================== */
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.about-text { text-align: center; }
+.about-highlight { color: var(--primary-accent); margin-bottom: 1rem; font-weight: 500; }
+.about-text p { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.btn-resume {
+    background-color: rgba(123, 94, 167, 0.08);
+    color: var(--secondary-accent);
+    border: 1px solid rgba(123, 94, 167, 0.2);
+}
+
+.btn-resume:hover {
+    background-color: var(--secondary-accent);
+    color: var(--text-primary);
+    box-shadow: 0 0 20px rgba(123, 94, 167, 0.25);
+}
+
+/* Decorative frame layout asset box hiding gracefully on mobile */
+.about-image { display: none; }
+
+/* ==========================================================================
+   6. PROJECTS PORTFOLIO ARCHITECTURE (MOBILE CORNER TILES)
+   ========================================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Unified mobile columns configuration */
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--surface-color);
+    border-top: 3px solid var(--primary-accent);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0 0 6px 6px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.project-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-type-badge {
+    font-family: var(--font-headings);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    background-color: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+}
+
+.project-summary { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.project-spec-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.spec-row {
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.spec-label { font-family: var(--font-headings); font-weight: 700; color: var(--text-primary); }
+.spec-value { color: var(--text-muted); }
+
+.project-card-action { margin-top: auto; }
+
+.btn-card-action {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 0.65rem;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-card-action:hover {
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+}
+
+/* ==========================================================================
+   7. CONTACT SUBMISSION CHANNELS
+   ========================================================================== */
+.contact-section { text-align: center; align-items: center; }
+.contact-prompt { max-width: 550px; color: var(--text-muted); margin-bottom: 2.5rem; }
+
+.btn-contact {
+    background-color: rgba(0, 212, 255, 0.03);
+    color: var(--primary-accent);
+    border: 1px solid var(--primary-accent);
+}
+
+.btn-contact:hover {
+    background-color: var(--primary-accent);
+    color: var(--bg-color);
+}
+
+/* ==========================================================================
+   8. STICKY FOOTER MODULE (FLEX MOBILE LAYOUT FIRST)
+   ========================================================================== */
+.main-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border-color);
+    z-index: 1000;
+    
+    /* Mobile flow: Stack elements perfectly centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+}
+
+.footer-copyright small,
+.footer-tagline span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.footer-tagline span {
+    font-style: italic;
+    color: rgba(107, 107, 128, 0.7);
+}
+
+.footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer-socials a {
+    font-size: 0.8rem;
+    font-family: var(--font-headings);
+    color: var(--text-muted);
+}
+
+/* Electric Cyan Hover Color shift rule on socials */
+.footer-socials a:hover {
+    color: var(--primary-accent);
+    text-shadow: 0 0 8px var(--primary-accent);
+}
+
+/* ==========================================================================
+   PURE CSS HAMBURGER NAVIGATION CORE CONTROLS
+   ========================================================================== */
+
+/* 1. HIDE TOGGLE ELEMENTS ENTIRELY BY DEFAULT (MOBILE-FIRST DESKTOP SAFETY) */
+.menu-toggle-checkbox,
+.hamburger-label {
+    display: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES (MOBILE BREAKPOINT ACTIONS)
+   ========================================================================== */
+
+/* Target screens smaller than typical desktop layout configurations */
+@media screen and (max-width: 967px) {
+    
+    /* Reveal the trigger block layout safely */
+    .hamburger-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        cursor: pointer;
+        z-index: 1010; /* Guarantees icon stacks perfectly above dropdown panel links */
+    }
+
+    /* Style individual icon lines with electric cyan palette tones */
+    .hamburger-bar {
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-primary);
+        border-radius: 2px;
+        transition: var(--transition-smooth);
+    }
+
+    /* Adjust nav-links list to behave like an absolute slide-down drawer dashboard */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Keeps navigation completely off-screen until checked */
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(10, 10, 15, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid var(--border-color);
+        
+        /* Center menu links inside the slide-out mobile interface panel */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transition: var(--transition-smooth);
+        z-index: 1005;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem; /* Scales font link sizing visually for comfortable thumb targeting */
+        color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       THE CHECKBOX ENGINE HACK: CONDITIONAL INTERACTIVE ANIMATIONS
+       ========================================================================== */
+
+    /* Rule A: Slide menu into vision drawer viewport layout when input checkbox is :checked */
+    .menu-toggle-checkbox:checked ~ .nav-links {
+        right: 0;
+    }
+
+    /* Rule B: Morph individual horizontal bar layout paths into an 'X' symbol */
+    .menu-toggle-checkbox:checked ~ .hamburger-label .hamburger-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: var(--primary-accent);
+    }
+
+    .menu-toggle-checkbox:checked ~ .hamburger-label .hamburger-bar:nth-child(2) {
+        opacity: 0; /* Vanishes the center link element entirely */
+    }
+
+    .menu-toggle-checkbox:checked ~ .hamburger-label .hamburger-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: var(--primary-accent);
+    }
+}
+
+/* ==========================================================================
+   9. RESPONSIVE LAYOUT MEDIA QUERY BREAKPOINTS
+   ========================================================================== */
+
+/* Small Devices (Minimum Step-out layout from stack configurations) */
+@media screen and (min-width: 480px) {
+    
+    .hero-cta { flex-direction: row; justify-content: center; }
+    .btn-outline { margin-left: 0; }
+    .spec-row { flex-direction: row; align-items: flex-start; }
+
+    .spec-label { min-width: 75px; }
+
+}
+
+/* Desktop and Workstation Layout Environments Scaling */
+@media screen and (min-width: 968px) {
+    body { padding-bottom: 60px; /* Applies spacing for structural footer row balance */ }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+    
+    .nav-links { gap: 2.5rem; }
+    
+    /* Hero horizontally balanced grids styling layout */
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+    .hero-text-content { text-align: left; flex: 1.2; }
+    .hero-cta { justify-content: flex-start; }
+    .skills-badges-container { justify-content: flex-start; }
+    .hero-image-content { flex: 0.8; display: flex; justify-content: flex-end; }
+    
+    /* About grid layout */
+    .about-grid { flex-direction: row; gap: 4rem; align-items: center; }
+    .about-text { text-align: left; flex: 1.2; }
+    .about-image {
+        display: block;
+        flex: 0.8;
+        position: relative;
+    }
+    
+    /* Secondary accent placeholder block decoration */
+    .about-frame-placeholder {
+        width: 100%;
+        height: 250px;
+        border: 2px solid var(--secondary-accent);
+        border-radius: 4px;
+        background: rgba(123, 94, 167, 0.02);
+    }
+    
+    /* Multi-column Grid System execution */
+    .projects-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    
+    /* Footer layout conversion row layout configuration */
+    .main-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
+        padding: 0 2rem;
+        gap: 0;
+    }
+}
